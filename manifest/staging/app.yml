@@ -1,0 +1,22 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: complex-app-staging
+  namespace: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  project: default
+  source:
+    path: k8s/kustomize/overlays/staging
+    repoURL: https://github.com/Khaalidsub/kubernetes-cluster
+    targetRevision: HEAD
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: complex-app
+  syncPolicy:
+    automated:
+      selfHeal: true
+      prune: true
+    syncOptions:
+    - CreateNamespace=true

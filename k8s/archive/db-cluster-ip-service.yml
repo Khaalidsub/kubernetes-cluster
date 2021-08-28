@@ -1,0 +1,23 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: redis-cluster-ip-service
+spec:
+  type: ClusterIP
+  selector:
+    app: redis
+  ports:
+  - port: 6379
+    targetPort: 6379
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: pg-cluster-ip-service
+spec:
+  type: ClusterIP
+  selector:
+    app: pg
+  ports:
+  - port: 5432
+    targetPort: 5432

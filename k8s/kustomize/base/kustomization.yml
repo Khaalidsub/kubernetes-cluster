@@ -1,0 +1,12 @@
+resources:
+  - namespace.yml
+  - secret.yml
+  - pvc.yml
+  - client.yml
+  - pvc.yml
+  - server.yml
+  - worker.yml
+  - ingress.yml
+  - redis.yml
+  - pg.yml
+namespace: complex-app

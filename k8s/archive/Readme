@@ -1,0 +1,4 @@
+- before running all those k8s you need to :
+    - deploy the containers to your docker hub
+    - create the secrete, using the `kubectl apply -k .` 
+    - create the ingress , minikube addons enable ingress

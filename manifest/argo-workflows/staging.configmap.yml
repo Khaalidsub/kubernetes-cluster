@@ -1,0 +1,32 @@
+apiVersion: v1
+data:
+  staging.workflow.yml: |
+    apiVersion: argoproj.io/v1alpha1
+    kind: Workflow
+    metadata:
+      generateName: staging-workflow-
+    spec:
+      entrypoint: whalesay
+      arguments:
+        parameters:
+          - name: message
+            value: hello world
+      templates:
+        - name: whalesay
+          inputs:
+            parameters:
+              - name: message
+          container:
+            image: docker/whalesay:latest
+            command: [cowsay]
+            args: ["{{inputs.parameters.message}}"]
+    parameters:
+      - src:
+          dependencyName: test-dep
+        dest: spec.arguments.parameters.0.value
+kind: ConfigMap
+metadata:
+  creationTimestamp: "2021-08-28T08:00:58Z"
+  name: staging-workflow-configmap
+  namespace: default
+  resourceVersion: "10109"
