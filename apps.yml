@@ -12,7 +12,7 @@ spec:
   source:
     repoURL: https://github.com/Khaalidsub/kubernetes-cluster.git
     targetRevision: HEAD
-    path: minifest/staging
+    path: manifest/staging
   destination:
     server: https://kubernetes.default.svc
     namespace: staging
@@ -22,3 +22,4 @@ spec:
       prune: true
     syncOptions:
     - CreateNamespace=true
+               
