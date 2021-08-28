@@ -33,7 +33,7 @@ metadata:
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 spec:
-  project: production
+  project: default
   source:
     repoURL: https://github.com/Khaalidsub/kubernetes-cluster.git
     targetRevision: HEAD

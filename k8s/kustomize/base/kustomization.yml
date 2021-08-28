@@ -1,7 +1,7 @@
 resources:
   - namespace.yml
   - secret.yml
-  - pvc.yml
+  # - pvc.yml
   - client.yml
   - pvc.yml
   - server.yml
