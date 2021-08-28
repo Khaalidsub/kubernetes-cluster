@@ -9,4 +9,4 @@ resources:
   - ingress.yml
   - redis.yml
   - pg.yml
-namespace: complex-app
+namespace: staging
